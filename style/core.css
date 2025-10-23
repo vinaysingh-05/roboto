@@ -1,0 +1,793 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+.image-gardient{
+    position: absolute;
+    top:0;
+    right: 0;
+    opacity:0.5;
+    z-index: -1;
+}
+.layer-blur{
+    position: absolute;
+    height: 0;
+    width: 30rem;
+    top:20%;
+    right: 0;
+    box-shadow: 0 0 700px 15px white;
+    rotate: -30deg;
+    z-index: -1;
+}
+.container{
+    width:100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 1rem 5rem;
+}
+header h1{
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 300;
+}
+nav{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-left: -5%;
+}
+
+.logo{
+    letter-spacing:3rem;
+}
+nav a{
+    font-size:18px;
+    letter-spacing: 0.2rem;
+    transition:color 0.2s ease-in-out;
+    color: inherit;
+    text-decoration:none;
+    z-index: 999;
+}
+nav a:hover{
+    color:cyan;
+    font-size:20px;
+}
+.btn-signing{
+    background-color: rgb(173, 121, 121);
+    color: black;
+    padding:0.8rem 2rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition:background-color 0.2s ease;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.btn-signing:hover{
+    background-color:aqua;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    min-height:calc(90vh-6rem);   
+}
+.content{
+    max-width: 40rem;
+    margin-left:5%;
+    margin-top:10%; 
+    z-index: 999;
+}
+.tag-box{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width:150px;
+    border-radius: 25px;
+    background:linear-gradient(to right, #656565,#7f42a7, #6600c5,#5300a0,#757575,#656565);
+    color:  black;
+    font-style: italic;
+    animation: animationgradient 1.5s linear infinite;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+     background-size: 200% auto; 
+    background-position: 0% center;
+}
+
+@keyframes animationgradient{
+    to{
+        background-position: 200% center;
+    }
+}
+.tag-box.tag{
+    position: absolute;
+    inset:3px ;
+    background-color: black;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.tag-box .tag:hover{
+    color: #5300a0;
+}
+.content h1 {
+    font-size: 3rem;
+    font-weight: 150;
+    letter-spacing: 0.2em;
+    margin: 2rem 0;
+}
+.comment{
+    font-size: 1.2rem;
+    letter-spacing:0.07em;
+    max-width: 35rem;
+    color: gray;
+}
+.buttons{
+    display: flex;
+    gap:80px;
+    margin-top:15px;
+}
+.btn-get-started{
+    text-decoration: none;
+    border: 1px solid #2a2a2a;
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition:background-color 0.2s ease;    
+}
+.btn-get-started:hover{
+    background-color:#1a1a1a;
+}
+.btn-signing-main{
+    text-decoration: none;
+    border: 1px solid #2a2a2a;
+    background-color: lightgray;
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition:background-color 0.2s ease;
+}
+.btn-signing-main:hover{
+     background-color:#1a1a1a;
+}
+.robot-3d{
+    position: absolute;
+    top: 0;
+    right: -20%;
+}
+.video-play{
+    margin-top: 100px;
+    margin-left: 50px;
+    border: solid black;
+}
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.about-text{
+     max-width: 600px;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing:2px;
+    margin-left: 200px;
+     text-align: center;
+    max-width: 800px; 
+    margin: 0 auto;   
+    color: white;
+}
+
+/* TABLET RESPONSIVE */
+@media(max-width:1300px){
+    header{
+        padding:1rem 0.5rem;
+    }
+    .content{
+        margin-top: 85%;
+    }
+    .robot-3d{
+        scale: 0.8;
+        top: -20%;
+        right:2%
+    }
+}
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+    header{
+        padding: 1rem 0.1rem;
+    }
+    nav{
+        display: none;
+    }
+    header h1{
+        font-size: 2rem;
+    }
+    .btn-signing{
+        padding: 0.6rem 1.5rem;
+    }
+    .content{
+        margin-top: 25rem;
+    }
+    .robot-3d{
+        scale: 0.5;
+        top:-25%;
+        right:0;
+    }
+    .content{
+        max-width: 30rem;
+        margin-left: 10%;
+    }
+    .tag-box{
+        width: 12rem;
+    }
+    .content h1{
+        font-size: 0.5rem;
+}
+    .comment{
+        font-size: 1rem;
+    }
+    .btn-get-started{
+        font-size: 0.8rem;
+        padding: 0.5rem 1.2rem;
+    }
+    .btn-signing-main{
+        font-size: 0.8rem;
+        padding: 0.8rem 2rem;
+
+    }
+
+}
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* makes video cover full laptop screen */
+  overflow: hidden;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures it covers the full screen */
+}
+
+
+/* =======================
+   FUTURISTIC FOOTER DESIGN
+=========================*/
+
+.footer {
+  background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  padding: 70px 40px 30px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating glow animation background */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(0, 255, 255, 0.1);
+  filter: blur(100px);
+  animation: floatGlow 8s infinite alternate ease-in-out;
+}
+@keyframes floatGlow {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(100px, 80px); }
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Brand Section */
+.footer-brand {
+  flex: 1 1 250px;
+}
+.footer-brand h2 {
+  font-size: 26px;
+  margin-top: 10px;
+  color: #00e0ff;
+  letter-spacing: 1px;
+}
+.footer-brand p {
+  font-size: 14px;
+  color: #bbb;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+.footer-logo {
+  width: 60px;
+  filter: drop-shadow(0 0 6px #00e0ff);
+}
+
+/* Quick Links */
+.footer-links ul {
+  list-style: none;
+}
+.footer-links h3 {
+  margin-bottom: 15px;
+  color: #00e0ff;
+  font-size: 18px;
+}
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+.footer-links ul li a {
+  text-decoration: none;
+  color: #bbb;
+  transition: 0.3s;
+}
+.footer-links ul li a:hover {
+  color: #00e0ff;
+  text-shadow: 0 0 8px #00e0ff;
+}
+
+/* Developer Info */
+.footer-info h3 {
+  color: #00e0ff;
+  margin-bottom: 15px;
+}
+.footer-info p {
+  color: #bbb;
+  margin-bottom: 5px;
+}
+
+/* Contact & Social */
+.footer-contact h3 {
+  color: #00e0ff;
+  margin-bottom: 15px;
+}
+.footer-contact p {
+  color: #bbb;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+.footer-contact i {
+  color: #00e0ff;
+  margin-right: 8px;
+}
+.social-icons {
+  margin-top: 10px;
+}
+.social-icons a {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 18px;
+  color: #bbb;
+  transition: 0.3s ease;
+}
+.social-icons a:hover {
+  color: #00e0ff;
+  text-shadow: 0 0 10px #00e0ff;
+  transform: scale(1.2);
+}
+
+/* Divider */
+.footer-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 40px auto;
+  width: 85%;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+}
+.footer-bottom p strong {
+  color: #00e0ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .social-icons a {
+    margin: 0 8px;
+  }
+}
+/* ================================
+   INTERACTIVE ABOUT SECTION
+================================= */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-container h1 {
+    text-align: center;
+    color: #00e0ff;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.about-container h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #00e0ff, #00ffaa);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.about-container p {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* ===============================
+   WHY CHOOSE ROBOTO BLOCKS
+================================= */
+.about-container ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.about-container ul li {
+    background: #111;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0,255,255,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+}
+
+.about-container ul li:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 30px rgba(0,255,255,0.4);
+    background: linear-gradient(135deg, #0ff, #00e0ff, #0ff);
+}
+
+.about-container ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: #00e0ff;
+    font-size: 1.2rem;
+}
+
+/* ===============================
+   ADD GRADIENT CARDS FOR SECTIONS
+================================= */
+.about-section-card {
+    background: #111;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 0 20px rgba(0,255,255,0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.about-section-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px rgba(0,255,255,0.3);
+    background: linear-gradient(145deg, #0ff, #111, #00e0ff);
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================= */
+@media(max-width: 1024px) {
+    .about-container h1 {
+        font-size: 2.5rem;
+    }
+    .about-container p {
+        font-size: 0.95rem;
+    }
+    .about-container ul {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media(max-width: 768px) {
+    .about-container h1 {
+        font-size: 2rem;
+    }
+    .about-container p {
+        font-size: 0.9rem;
+    }
+    .about-container ul {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+
+/* =========================
+   ENHANCED RESPONSIVE STYLING
+========================= */
+
+/* Extra small devices (mobiles portrait) */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        padding: 1rem 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .btn-signing {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+    }
+
+    .content {
+        margin-top: 20rem;
+        max-width: 90%;
+        margin-left: 5%;
+    }
+
+    .content h1 {
+        font-size: 1.5rem;
+    }
+
+    .comment {
+        font-size: 0.9rem;
+        max-width: 95%;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 10px;
+    }
+
+    .btn-get-started,
+    .btn-signing-main {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .robot-3d {
+        scale: 0.4;
+        top: -30%;
+        right: -10%;
+    }
+
+    .tag-box {
+        width: 10rem;
+        font-size: 0.8rem;
+    }
+
+    .about-robotics {
+        padding: 50px 20px;
+    }
+
+    .about-robotics h1 {
+        font-size: 2rem;
+    }
+
+    .about-robotics p,
+    .about-robotics ul li {
+        font-size: 0.95rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .footer-links ul li,
+    .footer-info p,
+    .footer-contact p {
+        font-size: 12px;
+    }
+
+    .social-icons a {
+        font-size: 16px;
+        margin: 0 6px;
+    }
+}
+
+/* Medium devices (tablets, small laptops) */
+@media (max-width: 1024px) {
+    header {
+        padding: 1rem 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .content {
+        margin-top: 40%;
+        max-width: 85%;
+        margin-left: 7%;
+    }
+
+    .robot-3d {
+        scale: 0.7;
+        top: -15%;
+        right: 2%;
+    }
+
+    .tag-box {
+        width: 12rem;
+    }
+
+    .buttons {
+        gap: 40px;
+    }
+
+    .btn-get-started,
+    .btn-signing-main {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .about-robotics {
+        padding: 60px 30px;
+    }
+
+    .about-robotics h1 {
+        font-size: 2.5rem;
+    }
+
+    .footer-container {
+        gap: 30px;
+    }
+}
+
+/* Large desktops (large screens) */
+@media (min-width: 1600px) {
+    .content {
+        max-width: 50rem;
+    }
+
+    .robot-3d {
+        scale: 1;
+        top: 0;
+        right: -15%;
+    }
+
+    .about-robotics h1 {
+        font-size: 4rem;
+    }
+}
+/* ======================
+   LANDING PAGE SECTIONS
+====================== */
+.landing-section {
+  padding: 80px 40px;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.landing-section h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #00e0ff;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.landing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Grid Layouts */
+.tech-grid, .innovation-grid, .news-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.tech-card, .innovation-card, .news-card {
+  background: #111;
+  border-radius: 15px;
+  padding: 25px;
+  width: 300px;
+  box-shadow: 0 0 15px rgba(0,255,255,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-card:hover, .innovation-card:hover, .news-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0,255,255,0.3);
+}
+
+.tech-card h3, .innovation-card h3, .news-card h3 {
+  color: #00e0ff;
+  margin-bottom: 10px;
+}
+
+.tech-card p, .innovation-card p, .news-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.news-card a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #00e0ff;
+  border: 1px solid #00e0ff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.news-card a:hover {
+  background: #00e0ff;
+  color: black;
+}
+
+/* Responsive Grids */
+@media(max-width: 1024px) {
+  .tech-grid, .innovation-grid, .news-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
