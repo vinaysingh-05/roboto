@@ -175,10 +175,18 @@ nav a:hover{
 .btn-signing-main:hover{
      background-color:#1a1a1a;
 }
+.model{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
 .robot-3d{
     position: absolute;
-    top: 0;
-    right: -20%;
+    top: 100px;
+    left: 100px;
+    width: 400px;
+    height: 400px;
 }
 .video-play{
     margin-top: 100px;
