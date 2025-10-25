@@ -85,6 +85,12 @@ nav a:hover{
 .btn-signing:hover{
     background-color:aqua;
 }
+.hero-section{
+    display: flex;
+    gap: 2rem;
+    position: relative;
+}
+
 .box{
     display: flex;
     flex-direction: column;
@@ -177,16 +183,13 @@ nav a:hover{
 }
 .model{
     position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
 }
 .robot-3d{
     position: absolute;
-    top: 100px;
-    left: 100px;
-    width: 400px;
-    height: 400px;
+    top: -8rem;
+    left: -4rem;
+    width: 48rem;
+    height: 48rem;
 }
 .video-play{
     margin-top: 100px;
